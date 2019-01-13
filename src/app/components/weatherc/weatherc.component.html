@@ -1,4 +1,5 @@
-<h4>{{ titleWeather }}</h4>
+<div class="mt-5">
+<h4 class="text-danger">Estado del tiempo</h4>
 <form>
   <select *ngIf="paises" class="form-control form-control-sm mb-3 rounded-0" #termino (change)="buscar(termino.value)">
     <option *ngFor="let city of noticeService.cities" [value]="city.capital">
@@ -10,4 +11,5 @@
   <img class="img-icon mr-1" [src]="noticeService.city.current.condition.icon" [alt]="weather.location.name">
   <span>{{ noticeService.city.current.temp_c }} &deg;C</span>
   <h5>{{ noticeService.city.location.name }}, {{ noticeService.city.location.country }}</h5>
+</div>
 </div>
