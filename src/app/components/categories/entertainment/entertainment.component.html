@@ -1,0 +1,24 @@
+<h3 class="text-dark mt-5"><i class="far fa-star"></i> Entretenimiento</h3>
+<div class="text-center text-danger vh-100" *ngIf="loading === true">
+  <h2><i class="fas fa-sync-alt fa-spin"></i> Cargando...</h2>
+</div>
+<div class="card-columns row" *ngIf="loading === false">
+  <div class="card border-none col-md-4 animated fadeIn" *ngFor="let notice of noticeService.entertainment | slice:0:12">
+    <a [href]="notice.url" target="_blank">
+      <img [src]="notice | noimagecat" class="card-img-top" [alt]="notice.title">
+    </a>
+    <div class="card-body">
+      <a [href]="notice.url" target="_blank" class="link-article">
+        <h5 class="card-title">{{ notice.title }}</h5>
+      </a>
+      <p><small *ngIf="notice.description !== ''">{{ notice.description | slice:0:130}}...</small></p>
+      <div class="d-flex flex-column">
+        <span>
+          <small>
+            <cite [title]="notice.source.name" class="text-danger">{{ notice.source.name }}</cite>
+          </small>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

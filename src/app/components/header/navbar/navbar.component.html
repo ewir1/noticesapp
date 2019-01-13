@@ -1,0 +1,53 @@
+<div class="bg-dark">
+  <nav class="container-fluid navbar navbar-expand-xl py-0 navbar-dark bg-dark">
+    <a class="navbar-brand bg-danger p-2 font-weight-bold" [routerLink]="['/home']">
+      <img src="assets/img/grid-world.svg" class="img-icon">
+      <span class="text-logo"> NoticesApp <small>1.0</small></span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav text-center">
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" [routerLink]="['/home']"><small>Inicio</small></a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" [routerLink]="['/categoria/ciencia']"><small>Ciencia</small></a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" [routerLink]="['/categoria/deportes']"><small>Deportes</small></a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" [routerLink]="['/categoria/economia']"><small>Economía</small></a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" [routerLink]="['/categoria/entretenimiento']"><small>Entretenimiento</small></a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" [routerLink]="['/categoria/salud']"><small>Salud</small></a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" [routerLink]="['/categoria/tecnologia']"><small>Tecnología</small></a>
+        </li>
+      </ul>
+      <form>
+        <div class="form-group form-flex">
+          <label for="exampleFormControlSelect1" class="text-white m-0"><i class="fas fa-globe-americas"></i></label>
+          <select class="form-control form-control-sm" #termino (change)="buscar(termino.value)">
+            <option value="">Seleccionar país</option>
+            <option value="AR">Argentina</option>
+            <option value="CO">Colombia</option>
+            <option value="MX">México</option>
+            <option value="VE">Venezuela</option>
+          </select>
+        </div>
+      </form>
+      <form class="form-inline form-mobile" (ngSubmit)="searchNotice(search.value)">
+        <input class="form-control mr-sm-0 rounded-0 bg-dark" type="search" #search placeholder="Buscar..." aria-label="Search">
+        <button class="btn btn-search my-2 my-sm-0 rounded-0" type="submit"><i class="fas fa-search"></i></button>
+      </form>
+    </div>
+  </nav>
+</div>
