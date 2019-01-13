@@ -4,11 +4,11 @@
 </div>
 <div class="card-columns row" *ngIf="loading === false">
   <div class="card border-none col-md-6 animated fadeIn" *ngFor="let notice of noticeService.notice | slice:0:16">
-    <a [href]="notice.url" target="_blank">
+    <a [href]="notice.url" target="_blank" rel="noopener">
       <img [src]="notice | noimage" class="card-img-top" [alt]="notice.title">
     </a>
     <div class="card-body">
-      <a [href]="notice.url" target="_blank" class="link-article">
+      <a [href]="notice.url" target="_blank" rel="noopener" class="link-article">
         <h5 class="card-title">{{ notice.title }}</h5>
       </a>
       <p><small *ngIf="notice.description !== ''">{{ notice.description | slice:0:130}}...</small></p>

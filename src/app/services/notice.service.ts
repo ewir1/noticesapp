@@ -11,7 +11,7 @@ export class NoticeService {
 
   private urlCoin = `https://min-api.cryptocompare.com/data/top/totalvolfull?limit=20&tsym=USD`;
 
-  private urlWeather = `http://api.apixu.com/v1/forecast.json?key=182a1d8fb22b47048cb141334190501&q=Caracas`;
+  private urlWeather = `https://api.apixu.com/v1/forecast.json?key=182a1d8fb22b47048cb141334190501&q=Caracas`;
 
   private urlCountry = `https://restcountries.eu/rest/v2/lang/es`;
 
@@ -45,7 +45,7 @@ export class NoticeService {
   }
 
   getQueryCities(query: string) {
-    const url = `http://api.apixu.com/v1/forecast.json?key=182a1d8fb22b47048cb141334190501&q=${query}`;
+    const url = `https://api.apixu.com/v1/forecast.json?key=182a1d8fb22b47048cb141334190501&q=${query}`;
     return this.http.get(url);
   }
 
